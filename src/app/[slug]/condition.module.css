@@ -1,0 +1,59 @@
+.narrow { max-width: 800px; margin: 0 auto; }
+.altBg { background: var(--bg-white); }
+.heading { font-size: 24px; margin-bottom: 16px; font-family: var(--font-heading); }
+@media (min-width: 768px) { .heading { font-size: 28px; } }
+.text { color: var(--text-secondary); line-height: 1.8; font-size: 15px; }
+
+.infoList { display: flex; flex-direction: column; gap: 12px; }
+.infoItem {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 14px 18px;
+  background: var(--bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+}
+.altBg .infoItem { background: var(--bg); }
+.infoLabel { font-weight: 600; font-size: 15px; color: var(--text); }
+.infoDesc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+.subHeading { font-size: 18px; font-family: var(--font-heading); font-weight: 600; margin-bottom: 12px; color: var(--text); }
+
+.consList { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.consList li {
+  padding: 10px 16px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.altBg .consList li { background: var(--bg); }
+
+.surgicalGrid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 640px) { .surgicalGrid { grid-template-columns: repeat(2, 1fr); } }
+.surgicalCard { padding: 20px; }
+.surgicalName { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.surgicalDesc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+.prosCons { display: flex; flex-direction: column; gap: 8px; }
+.proLabel { font-size: 12px; font-weight: 600; color: #34a873; }
+.conLabel { font-size: 12px; font-weight: 600; color: #e57373; }
+.prosCons p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-top: 2px; }
+
+.ctaBanner {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 60px 0;
+  text-align: center;
+}
+.ctaTitle { color: #fff; font-size: 26px; margin-bottom: 8px; }
+@media (min-width: 768px) { .ctaTitle { font-size: 32px; } }
+.ctaSub { color: rgba(255,255,255,0.8); font-size: 16px; }
+.ctaBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: var(--primary);
+  padding: 14px 28px; border-radius: 8px;
+  font-weight: 600; font-size: 15px;
+  border: none; cursor: pointer;
+  transition: all 0.2s; text-decoration: none; margin-top: 20px;
+}
+.ctaBtn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
