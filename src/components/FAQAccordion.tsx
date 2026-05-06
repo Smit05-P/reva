@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import HomeIcons from "./HomeIcons";
 import s from "./FAQ.module.css";
 
 interface FAQItem { q: string; a: string; }
@@ -19,7 +20,9 @@ export default function FAQAccordion({ faqs, title = "Frequently Asked Questions
             <div key={i} className={`${s.item} ${openIndex === i ? s.itemOpen : ""}`}>
               <button className={s.trigger} onClick={() => toggle(i)} aria-expanded={openIndex === i}>
                 <span className={s.question}>{faq.q}</span>
-                <span className={s.icon}>{openIndex === i ? "−" : "+"}</span>
+                <span className={s.icon}>
+                  <HomeIcons name={openIndex === i ? "Minus" : "Plus"} size={18} />
+                </span>
               </button>
               <div className={s.answer} style={{ maxHeight: openIndex === i ? "500px" : "0" }}>
                 <p className={s.answerText}>{faq.a}</p>

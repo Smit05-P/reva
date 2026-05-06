@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/config";
+import HomeIcons from "@/components/HomeIcons";
+import ConditionSvgBg from "@/components/ConditionSvgBg";
 import s from "./contact.module.css";
 
 export const metadata: Metadata = {
@@ -9,7 +11,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ConditionSvgBg slug="contact" />
       <section className="page-hero">
         <div className="container">
           <h1>Contact Us</h1>
@@ -21,17 +24,17 @@ export default function ContactPage() {
         <div className="container">
           <div className={s.cards}>
             <a href={`tel:${siteConfig.phone}`} className={`card ${s.contactCard}`}>
-              <span className={s.icon}>📞</span>
+              <span className={s.icon}><HomeIcons name="Phone" size={28} /></span>
               <h3>Call Us</h3>
               <p>{siteConfig.phone}</p>
             </a>
             <a href={`mailto:${siteConfig.email}`} className={`card ${s.contactCard}`}>
-              <span className={s.icon}>✉️</span>
+              <span className={s.icon}><HomeIcons name="Mail" size={28} /></span>
               <h3>Email Us</h3>
               <p>{siteConfig.email}</p>
             </a>
             <div className={`card ${s.contactCard}`}>
-              <span className={s.icon}>📍</span>
+              <span className={s.icon}><HomeIcons name="MapPin" size={28} /></span>
               <h3>Visit Us</h3>
               <p className={s.addressText}>{siteConfig.address}</p>
             </div>
@@ -51,6 +54,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -11,6 +11,14 @@
   text-align: left; gap: 16px; font-family: inherit;
 }
 .question { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; }
-.icon { font-size: 20px; font-weight: 300; color: var(--primary); flex-shrink: 0; width: 24px; text-align: center; }
+.icon {
+  color: var(--primary);
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .answer { overflow: hidden; transition: max-height 0.3s ease; }
 .answerText { padding: 0 20px 16px; font-size: 14px; line-height: 1.7; color: var(--text-secondary); }

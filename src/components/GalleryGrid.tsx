@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import HomeIcons from "./HomeIcons";
 import s from "./Gallery.module.css";
 
 interface GalleryImage { src: string; alt: string; }
@@ -35,7 +36,7 @@ export default function GalleryGrid({ categories }: { categories: GalleryCategor
             {cat.images.map((img, ii) => (
               <button key={img.src} className={s.item} onClick={() => setLightbox({ catIdx: ci, imgIdx: ii })} aria-label={`View ${img.alt}`}>
                 <div className={s.placeholder}>
-                  <span>🖼️</span>
+                  <HomeIcons name="Image" size={32} strokeWidth={1.5} />
                   <span className={s.placeholderText}>{img.alt}</span>
                 </div>
               </button>
@@ -47,15 +48,21 @@ export default function GalleryGrid({ categories }: { categories: GalleryCategor
       {lightbox && currentImage && (
         <div className={s.overlay} onClick={() => setLightbox(null)} tabIndex={0} role="dialog" aria-label="Image lightbox"
           onKeyDown={(e) => { if (e.key === "Escape") setLightbox(null); if (e.key === "ArrowLeft") navigate(-1); if (e.key === "ArrowRight") navigate(1); }}>
-          <button className={s.close} onClick={() => setLightbox(null)} aria-label="Close">✕</button>
-          <button className={`${s.arrow} ${s.arrowLeft}`} onClick={(e) => { e.stopPropagation(); navigate(-1); }} aria-label="Previous">‹</button>
+          <button className={s.close} onClick={() => setLightbox(null)} aria-label="Close">
+            <HomeIcons name="X" size={24} />
+          </button>
+          <button className={`${s.arrow} ${s.arrowLeft}`} onClick={(e) => { e.stopPropagation(); navigate(-1); }} aria-label="Previous">
+            <HomeIcons name="ChevronLeft" size={32} />
+          </button>
           <div className={s.lbContent} onClick={(e) => e.stopPropagation()}>
             <div className={s.lbPlaceholder}>
-              <span>🖼️</span>
+              <HomeIcons name="Image" size={64} strokeWidth={1} />
               <p>{currentImage.alt}</p>
             </div>
           </div>
-          <button className={`${s.arrow} ${s.arrowRight}`} onClick={(e) => { e.stopPropagation(); navigate(1); }} aria-label="Next">›</button>
+          <button className={`${s.arrow} ${s.arrowRight}`} onClick={(e) => { e.stopPropagation(); navigate(1); }} aria-label="Next">
+            <HomeIcons name="ChevronRight" size={32} />
+          </button>
         </div>
       )}
     </>

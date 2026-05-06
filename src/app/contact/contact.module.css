@@ -10,9 +10,21 @@
 .contactCard {
   text-align: center;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
 }
 a.contactCard { cursor: pointer; }
-.icon { font-size: 36px; display: block; margin-bottom: 12px; }
+.icon {
+  width: 56px;
+  height: 56px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
 .contactCard h3 { font-size: 16px; font-family: var(--font-heading); margin-bottom: 6px; }
 .contactCard p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 .addressText { font-size: 13px !important; }

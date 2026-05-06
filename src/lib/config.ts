@@ -1,3 +1,5 @@
+import { newConditions, facilities as facilitiesData } from "./new-conditions";
+
 export const siteConfig = {
   name: "Reva Surgical Hospital",
   tagline: "Expert Anorectal Care — Right Here in Palanpur",
@@ -37,7 +39,7 @@ export const conditions = [
     altTitle: "Hemorrhoids",
     shortDesc:
       "Swollen veins in the rectum or anus — treatable with minimally invasive surgery.",
-    icon: "🩸",
+    icon: "Droplets",
     seoTitle: "Piles Treatment in Palanpur | Dr. Parth Prajapati",
     seoDesc:
       "Expert piles & hemorrhoid treatment in Palanpur by Dr. Parth Prajapati. Minimally invasive laser surgery with fast recovery.",
@@ -100,7 +102,7 @@ export const conditions = [
     altTitle: "Anal Fissure",
     shortDesc:
       "Small tear in the anal lining causing pain and bleeding during bowel movements.",
-    icon: "⚡",
+    icon: "Zap",
     seoTitle: "Fissure Treatment in Palanpur | Dr. Parth Prajapati",
     seoDesc:
       "Painless fissure treatment in Palanpur. Expert care by Dr. Parth Prajapati — laser fissurectomy with fast recovery.",
@@ -164,7 +166,7 @@ export const conditions = [
     altTitle: "Anorectal Fistula",
     shortDesc:
       "Abnormal tunnel between the rectum and skin — requires surgical correction.",
-    icon: "🔬",
+    icon: "Microscope",
     seoTitle: "Fistula Treatment in Palanpur | Dr. Parth Prajapati",
     seoDesc:
       "Expert fistula treatment in Palanpur Gujarat. Dr. Parth Prajapati offers advanced laser fistula surgery with minimal pain.",
@@ -224,7 +226,7 @@ export const conditions = [
     altTitle: "Pilonidal Cyst",
     shortDesc:
       "Infected tract near the tailbone — treated with laser/minimally invasive surgery.",
-    icon: "🏥",
+    icon: "Hospital",
     seoTitle: "Pilonidal Sinus Treatment in Palanpur | Dr. Parth Prajapati",
     seoDesc:
       "Pilonidal sinus treatment in Palanpur by Dr. Parth Prajapati. Advanced laser surgery with same-day discharge and fast recovery.",
@@ -278,6 +280,7 @@ export const conditions = [
       { q: "Who is at higher risk?", a: "Young males (15–35 years), people with sedentary jobs, those with thick body hair, and individuals with a family history are at higher risk." },
     ],
   },
+  ...newConditions,
 ];
 
 export const testimonials = [
@@ -293,17 +296,19 @@ export const stats = [
   { label: "Years of Experience", value: 10, suffix: "+" },
   { label: "Happy Patients", value: 5000, suffix: "+" },
   { label: "Surgeries Performed", value: 3000, suffix: "+" },
-  { label: "Conditions Treated", value: 4, suffix: "" },
+  { label: "Conditions Treated", value: 9, suffix: "" },
 ];
 
 export const whyChooseUs = [
-  { title: "Specialist Anorectal Surgeon", desc: "Dedicated expertise in proctology — not a general surgeon", icon: "🎯" },
-  { title: "Minimally Invasive Techniques", desc: "Advanced laser surgery with less pain and faster recovery", icon: "✨" },
-  { title: "Experienced & Qualified", desc: "B.A.M.S, M.S (Ayu) with years of specialized practice", icon: "🏅" },
-  { title: "Local Expert Care", desc: "No need to travel to Ahmedabad or Surat for specialist treatment", icon: "📍" },
-  { title: "Compassionate Care", desc: "Patient-focused approach with personal attention and follow-up", icon: "❤️" },
-  { title: "Transparent Process", desc: "Clear consultation, honest advice, and no unnecessary procedures", icon: "🤝" },
+  { title: "Specialist Anorectal Surgeon", desc: "Dedicated expertise in proctology — not a general surgeon", icon: "Target" },
+  { title: "Minimally Invasive Techniques", desc: "Advanced laser surgery with less pain and faster recovery", icon: "Sparkles" },
+  { title: "Experienced & Qualified", desc: "B.A.M.S, M.S (Ayu) with years of specialized practice", icon: "Award" },
+  { title: "Local Expert Care", desc: "No need to travel to Ahmedabad or Surat for specialist treatment", icon: "MapPin" },
+  { title: "Compassionate Care", desc: "Patient-focused approach with personal attention and follow-up", icon: "Heart" },
+  { title: "Transparent Process", desc: "Clear consultation, honest advice, and no unnecessary procedures", icon: "Handshake" },
 ];
+
+export { facilitiesData as facilities };
 
 export const navLinks = [
   { label: "Home", href: "/" },
@@ -312,10 +317,31 @@ export const navLinks = [
     label: "Specialities",
     href: "#",
     children: [
-      { label: "Piles", href: "/piles" },
+      { label: "Pilonidal Sinus", href: "/pilonidal-sinus" },
       { label: "Fissure", href: "/fissure" },
       { label: "Fistula", href: "/fistula" },
-      { label: "Pilonidal Sinus", href: "/pilonidal-sinus" },
+      { label: "Piles", href: "/piles" },
+      { label: "Rectal Prolapse", href: "/rectal-prolapse" },
+      { label: "Anal Papilla", href: "/anal-papilla" },
+      { label: "Perianal Abscess", href: "/perianal-abscess" },
+      { label: "ODS", href: "/ods" },
+      { label: "Constipation", href: "/constipation" },
+    ],
+  },
+  {
+    label: "Facilities",
+    href: "#",
+    children: [
+      { label: "Radiology", href: "/facilities#radiology" },
+      { label: "Anal Manometry", href: "/facilities#anal-manometry" },
+      { label: "Biofeedback Therapy", href: "/facilities#biofeedback-therapy" },
+      { label: "Colonoscopy", href: "/facilities#colonoscopy" },
+      { label: "Endoscopy", href: "/facilities#endoscopy" },
+      { label: "Pharmacy", href: "/facilities#pharmacy" },
+      { label: "Laboratory", href: "/facilities#laboratory" },
+      { label: "Health Insurance", href: "/facilities#health-insurance" },
+      { label: "Medical Tourism", href: "/facilities#medical-tourism" },
+      { label: "Nutrition & Ayurveda", href: "/facilities#nutrition-ayurveda" },
     ],
   },
   { label: "Gallery", href: "/gallery" },

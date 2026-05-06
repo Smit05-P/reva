@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { galleryCategories } from "@/lib/config";
 import GalleryGrid from "@/components/GalleryGrid";
+import ConditionSvgBg from "@/components/ConditionSvgBg";
 
 export const metadata: Metadata = {
   title: "Gallery — Our Hospital Facilities",
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ConditionSvgBg slug="gallery" />
       <section className="page-hero">
         <div className="container">
           <h1>Our Hospital Facilities</h1>
@@ -22,6 +24,6 @@ export default function GalleryPage() {
           <GalleryGrid categories={galleryCategories} />
         </div>
       </section>
-    </>
+    </div>
   );
 }

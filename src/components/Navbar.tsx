@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { navLinks, siteConfig } from "@/lib/config";
 import s from "./Navbar.module.css";
@@ -9,7 +10,7 @@ import s from "./Navbar.module.css";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -34,11 +35,14 @@ export default function Navbar() {
         <div className={`container ${s.inner}`}>
           {/* Logo */}
           <Link href="/" className={s.logo} aria-label="Home">
-            <div className={s.logoIcon}>R</div>
-            <div className={s.logoText}>
-              <span className={s.logoName}>{siteConfig.name}</span>
-              <span className={s.logoSub}>Anorectal Specialist</span>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt={siteConfig.name}
+              width={160}
+              height={48}
+              className={s.logoImg}
+              priority
+            />
           </Link>
 
           {/* Desktop Links */}
@@ -48,8 +52,8 @@ export default function Navbar() {
                 <div
                   key={link.label}
                   className={s.dropdown}
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
                     className={`${s.navLink} ${
@@ -57,8 +61,8 @@ export default function Navbar() {
                         ? s.navLinkActive
                         : ""
                     }`}
-                    aria-expanded={dropdownOpen}
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    aria-expanded={openDropdown === link.label}
+                    onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                   >
                     {link.label}
                     <svg
@@ -70,13 +74,13 @@ export default function Navbar() {
                       strokeWidth="2.5"
                       style={{
                         transition: "transform 0.2s",
-                        transform: dropdownOpen ? "rotate(180deg)" : "none",
+                        transform: openDropdown === link.label ? "rotate(180deg)" : "none",
                       }}
                     >
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  {dropdownOpen && (
+                  {openDropdown === link.label && (
                     <div className={s.dropdownMenu}>
                       {link.children.map((child) => (
                         <Link
@@ -85,7 +89,7 @@ export default function Navbar() {
                           className={`${s.dropdownItem} ${
                             isActive(child.href) ? s.dropdownItemActive : ""
                           }`}
-                          onClick={() => setDropdownOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                         >
                           {child.label}
                         </Link>
@@ -148,7 +152,12 @@ export default function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className={s.mobileHeader}>
-              <span className={s.mobileHeaderName}>{siteConfig.name}</span>
+              <Image
+                src="/images/logo.png"
+                alt={siteConfig.name}
+                width={130}
+                height={40}
+              />
               <button
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"

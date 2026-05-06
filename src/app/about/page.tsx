@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { doctor } from "@/lib/config";
+import HomeIcons from "@/components/HomeIcons";
+import ConditionSvgBg from "@/components/ConditionSvgBg";
 import s from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -10,7 +13,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      <ConditionSvgBg slug="about" />
       <section className="page-hero">
         <div className="container">
           <h1>About {doctor.name}</h1>
@@ -21,12 +25,21 @@ export default function AboutPage() {
       <section className="section">
         <div className={`container ${s.grid}`}>
           <div className={s.photoCol}>
-            <div className={s.photo}>👨‍⚕️</div>
+            <div className={s.photo}>
+              <Image
+                src="/images/profile.jpeg"
+                alt={doctor.name}
+                width={360}
+                height={450}
+                className={s.profileImg}
+                priority
+              />
+            </div>
             <div className={s.infoCard}>
               <h3>{doctor.name}</h3>
               <p className={s.infoDesg}>{doctor.designation}</p>
               <p className={s.infoQual}>{doctor.qualifications}</p>
-              <p className={s.infoLoc}>📍 {doctor.location}</p>
+              <p className={s.infoLoc}><HomeIcons name="MapPin" size={14} /> {doctor.location}</p>
             </div>
           </div>
 
@@ -39,7 +52,7 @@ export default function AboutPage() {
             <ul className={s.expertiseList}>
               {doctor.specialties.map((sp) => (
                 <li key={sp} className={s.expertiseItem}>
-                  <span className={s.check}>✓</span>{sp}
+                  <HomeIcons name="CheckCircle" size={16} className={s.checkIcon} />{sp}
                 </li>
               ))}
             </ul>
@@ -55,6 +68,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

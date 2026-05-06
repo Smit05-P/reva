@@ -1,5 +1,7 @@
+.pageWrapper { position: relative; z-index: 1; background: transparent; }
+.checkInline { display: inline; vertical-align: -2px; color: #34a873; margin-right: 4px; }
 .narrow { max-width: 800px; margin: 0 auto; }
-.altBg { background: var(--bg-white); }
+.altBg { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(8px); }
 .heading { font-size: 24px; margin-bottom: 16px; font-family: var(--font-heading); }
 @media (min-width: 768px) { .heading { font-size: 28px; } }
 .text { color: var(--text-secondary); line-height: 1.8; font-size: 15px; }

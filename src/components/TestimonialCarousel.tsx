@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import HomeIcons from "./HomeIcons";
 import s from "./Testimonial.module.css";
 
 interface Testimonial { name: string; condition: string; gender: string; quote: string; }
@@ -23,12 +24,16 @@ export default function TestimonialCarousel({ testimonials, title = "What Our Pa
         <h2 className="section-title">{title}</h2>
         <p className="section-subtitle">Real stories from patients who trusted us with their care</p>
         <div className={s.wrapper}>
-          <button onClick={prev} className={s.arrow} aria-label="Previous">‹</button>
+          <button onClick={prev} className={s.arrow} aria-label="Previous">
+            <HomeIcons name="ChevronLeft" size={24} />
+          </button>
           <div className={s.track}>
             {testimonials.map((t, i) => (
               i === current && (
                 <div key={i} className={s.card}>
-                  <div className={s.avatar}>{t.gender === "female" ? "👩" : "👨"}</div>
+                  <div className={s.avatar}>
+                    <HomeIcons name="User" size={48} />
+                  </div>
                   <div className={s.stars}>★★★★★</div>
                   <p className={s.quote}>&ldquo;{t.quote}&rdquo;</p>
                   <div className={s.meta}>
@@ -39,7 +44,9 @@ export default function TestimonialCarousel({ testimonials, title = "What Our Pa
               )
             ))}
           </div>
-          <button onClick={next} className={s.arrow} aria-label="Next">›</button>
+          <button onClick={next} className={s.arrow} aria-label="Next">
+            <HomeIcons name="ChevronRight" size={24} />
+          </button>
         </div>
         <div className={s.dots}>
           {testimonials.map((_, i) => (

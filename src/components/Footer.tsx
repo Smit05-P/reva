@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig, conditions } from "@/lib/config";
 import styles from "./Footer.module.css";
 
@@ -9,8 +10,13 @@ export default function Footer() {
         <div className={styles.grid}>
           <div>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>🏥</span>
-              <span className={styles.logoName}>{siteConfig.name}</span>
+              <Image
+                src="/images/logo.png"
+                alt={siteConfig.name}
+                width={200}
+                height={60}
+                style={{ objectFit: "contain" }}
+              />
             </div>
             <p className={styles.tagline}>
               Expert anorectal surgical care in Palanpur. Advanced laser treatment for Piles, Fissure, Fistula &amp; Pilonidal Sinus.
@@ -23,6 +29,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Doctor</Link></li>
               <li><Link href="/gallery">Gallery</Link></li>
+              <li><Link href="/facilities">Facilities</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
