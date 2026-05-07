@@ -6,11 +6,13 @@ export const siteConfig = {
   description:
     "Specialist anorectal surgical care for Piles, Fissure, Fistula & Pilonidal Sinus by Dr. Parth Prajapati in Palanpur, Gujarat.",
   url: "https://revasurgicalhospital.com",
-  phone: "+91 94269 07608",
-  phoneRaw: "919426907608",
-  email: "parthr120@gmail.com",
+  phone: "+91 90810 95640",
+  phoneRaw: "919081095640",
+  phone2: "+91 94269 07608",
+  phone2Raw: "919426907608",
+  email: "www.revasurgicalhospital@gmail.com",
   address:
-    "2nd Floor, Dhyan Complex, Koptak Bank Rd, Shahbaaug Palace, Doctor House Area, Ambika Society, Palanpur, Gujarat — 385001",
+    "2nd Floor, Dhyan Complex, Above Dr. Devendra Chaudhary Hospital, Kotak Bank Rd, Doctor House Area, Palanpur, Gujarat - 385001",
   whatsappMessage:
     "Hello, I am from the website. I want to book an appointment.",
   googleMapsEmbed:
@@ -20,7 +22,7 @@ export const siteConfig = {
 
 export const doctor = {
   name: "Dr. Parth Prajapati",
-  designation: "Consultant Anorectal Surgeon",
+  designation: "Consultant Laser Proctologist and General Surgeon",
   qualifications: "B.A.M.S, M.S (Ayu)",
   location: "Palanpur, Gujarat",
   bio: "Dr. Parth Prajapati is a highly skilled Consultant Proctologist & Anorectal Surgeon specializing in minimally invasive and laser-based treatments for anorectal conditions. With years of dedicated practice, he brings expert care right to Palanpur — so patients don't need to travel to big cities for specialist treatment.",

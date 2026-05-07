@@ -46,7 +46,11 @@ export default function Footer() {
           <div>
             <h4 className={styles.heading}>Contact</h4>
             <ul className={styles.links}>
-              <li><a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a></li>
+              <li><a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phone}</a></li>
+              {/* @ts-ignore */}
+              {siteConfig.phone2 && (
+                <li><a href={`tel:${siteConfig.phone2Raw}`}>{siteConfig.phone2}</a></li>
+              )}
               <li><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
               <li className={styles.address}>{siteConfig.address}</li>
             </ul>

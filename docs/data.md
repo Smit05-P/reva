@@ -14,8 +14,8 @@
 # Navigation Structure
 
 ## Top Bar (Pre-Header)
-- Phone: +91 88494 74439 | +91 91064 10547
-- Email: info@drsaurabhpatel.com
+- Phone: +91 90810 95640 | +91 94269 07608
+- Email: www.revasurgicalhospital@gmail.com
 - Social Links: Facebook, Instagram, YouTube
 
 ## Main Menu
@@ -54,7 +54,7 @@
 
 ### About / Doctor Profile Section (`#aboutus`)
 - **Doctor Name:** Dr. Saurabh Patel
-- **Title:** Consultant Proctologist & General Surgeon
+- **Title:** Consultant Laser Proctologist and General Surgeon
 - **Photo:** Profile image included
 - **Bio Summary:**
   - Medical degree from J.S.A.M College, Nadiad

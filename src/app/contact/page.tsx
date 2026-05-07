@@ -23,11 +23,20 @@ export default function ContactPage() {
       <section className="section">
         <div className="container">
           <div className={s.cards}>
-            <a href={`tel:${siteConfig.phone}`} className={`card ${s.contactCard}`}>
+            <div className={`card ${s.contactCard}`}>
               <span className={s.icon}><HomeIcons name="Phone" size={28} /></span>
               <h3>Call Us</h3>
-              <p>{siteConfig.phone}</p>
-            </a>
+              <p>
+                <a href={`tel:${siteConfig.phoneRaw}`} style={{ color: 'inherit', textDecoration: 'none' }}>{siteConfig.phone}</a>
+                {/* @ts-ignore */}
+                {siteConfig.phone2 && (
+                  <>
+                    <br />
+                    <a href={`tel:${siteConfig.phone2Raw}`} style={{ color: 'inherit', textDecoration: 'none' }}>{siteConfig.phone2}</a>
+                  </>
+                )}
+              </p>
+            </div>
             <a href={`mailto:${siteConfig.email}`} className={`card ${s.contactCard}`}>
               <span className={s.icon}><HomeIcons name="Mail" size={28} /></span>
               <h3>Email Us</h3>

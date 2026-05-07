@@ -21,15 +21,27 @@ export default function TopBar() {
         flexWrap: 'wrap',
         gap: '12px',
       }}>
-        <div style={{ display: 'flex', gap: '24px' }}>
-          <a href={`tel:${siteConfig.phone}`} aria-label="Call us" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            color: 'rgba(255,255,255,0.9)', transition: 'color 0.2s',
-            textDecoration: 'none', fontWeight: 500,
-          }}>
-            <HomeIcons name="Phone" size={13} strokeWidth={2.5} />
-            <span>{siteConfig.phone}</span>
-          </a>
+        <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <a href={`tel:${siteConfig.phoneRaw}`} aria-label="Call us" style={{
+              display: 'inline-flex', alignItems: 'center', gap: '8px',
+              color: 'rgba(255,255,255,0.9)', transition: 'color 0.2s',
+              textDecoration: 'none', fontWeight: 500,
+            }}>
+              <HomeIcons name="Phone" size={13} strokeWidth={2.5} />
+              <span>{siteConfig.phone}</span>
+            </a>
+            {/* @ts-ignore */}
+            {siteConfig.phone2 && (
+              <a href={`tel:${siteConfig.phone2Raw}`} aria-label="Call us" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                color: 'rgba(255,255,255,0.9)', transition: 'color 0.2s',
+                textDecoration: 'none', fontWeight: 500,
+              }}>
+                <span>{siteConfig.phone2}</span>
+              </a>
+            )}
+          </div>
           <a href={`mailto:${siteConfig.email}`} aria-label="Email us" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             color: 'rgba(255,255,255,0.9)', transition: 'color 0.2s',
