@@ -307,6 +307,28 @@
   border-radius: 10px;
 }
 
+.serviceImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  margin-top: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.serviceImg {
+  object-fit: contain;
+  padding: 12px;
+  transition: transform 0.5s ease;
+}
+
+.serviceCard:hover .serviceImg {
+  transform: scale(1.05);
+}
+
 .serviceName {
   font-size: 18px;
   font-weight: 700;
@@ -464,4 +486,90 @@
 
 .ctaBtnOutline:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+/* Facilities Preview */
+.facilitiesSection {
+  background: var(--bg);
+}
+
+.facilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .facilitiesGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.facilityItem {
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.facilityItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.facilityImgWrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--primary-light);
+}
+
+@media (min-width: 768px) {
+  .facilityImgWrapper {
+    aspect-ratio: 4/5;
+  }
+}
+
+.facilityImg {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.facilityItem:hover .facilityImg {
+  transform: scale(1.06);
+}
+
+.facilityOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  transition: background 0.3s ease;
+}
+
+.facilityItem:hover .facilityOverlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.05) 60%);
+}
+
+.facilityLabel {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 768px) {
+  .facilityLabel {
+    font-size: 16px;
+  }
+}
+
+.facilitiesCta {
+  text-align: center;
+  margin-top: 32px;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import HomeIcons from "./HomeIcons";
 import s from "./Gallery.module.css";
 
@@ -35,9 +36,18 @@ export default function GalleryGrid({ categories }: { categories: GalleryCategor
           <div className={s.grid}>
             {cat.images.map((img, ii) => (
               <button key={img.src} className={s.item} onClick={() => setLightbox({ catIdx: ci, imgIdx: ii })} aria-label={`View ${img.alt}`}>
-                <div className={s.placeholder}>
-                  <HomeIcons name="Image" size={32} strokeWidth={1.5} />
-                  <span className={s.placeholderText}>{img.alt}</span>
+                <div className={s.imgWrapper}>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className={s.img}
+                  />
+                  <div className={s.imgOverlay}>
+                    <HomeIcons name="ZoomIn" size={24} />
+                    <span className={s.imgLabel}>{img.alt}</span>
+                  </div>
                 </div>
               </button>
             ))}
@@ -55,14 +65,23 @@ export default function GalleryGrid({ categories }: { categories: GalleryCategor
             <HomeIcons name="ChevronLeft" size={32} />
           </button>
           <div className={s.lbContent} onClick={(e) => e.stopPropagation()}>
-            <div className={s.lbPlaceholder}>
-              <HomeIcons name="Image" size={64} strokeWidth={1} />
-              <p>{currentImage.alt}</p>
-            </div>
+            <Image
+              src={currentImage.src}
+              alt={currentImage.alt}
+              width={900}
+              height={600}
+              className={s.lbImage}
+              sizes="80vw"
+              priority
+            />
+            <p className={s.lbCaption}>{currentImage.alt}</p>
           </div>
           <button className={`${s.arrow} ${s.arrowRight}`} onClick={(e) => { e.stopPropagation(); navigate(1); }} aria-label="Next">
             <HomeIcons name="ChevronRight" size={32} />
           </button>
+          <div className={s.lbCounter}>
+            {flatIndex + 1} / {allImages.length}
+          </div>
         </div>
       )}
     </>

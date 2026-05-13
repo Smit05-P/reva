@@ -10,7 +10,6 @@ import s from "./Navbar.module.css";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -52,8 +51,6 @@ export default function Navbar() {
                 <div
                   key={link.label}
                   className={s.dropdown}
-                  onMouseEnter={() => setOpenDropdown(link.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
                     className={`${s.navLink} ${
@@ -61,8 +58,6 @@ export default function Navbar() {
                         ? s.navLinkActive
                         : ""
                     }`}
-                    aria-expanded={openDropdown === link.label}
-                    onClick={() => setOpenDropdown(openDropdown === link.label ? null : link.label)}
                   >
                     {link.label}
                     <svg
@@ -72,30 +67,24 @@ export default function Navbar() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2.5"
-                      style={{
-                        transition: "transform 0.2s",
-                        transform: openDropdown === link.label ? "rotate(180deg)" : "none",
-                      }}
+                      className={s.dropdownIcon}
                     >
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  {openDropdown === link.label && (
-                    <div className={s.dropdownMenu}>
-                      {link.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className={`${s.dropdownItem} ${
-                            isActive(child.href) ? s.dropdownItemActive : ""
-                          }`}
-                          onClick={() => setOpenDropdown(null)}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  <div className={s.dropdownMenu}>
+                    {link.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className={`${s.dropdownItem} ${
+                          isActive(child.href) ? s.dropdownItemActive : ""
+                        }`}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <Link

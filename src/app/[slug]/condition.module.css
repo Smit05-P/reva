@@ -6,6 +6,44 @@
 @media (min-width: 768px) { .heading { font-size: 28px; } }
 .text { color: var(--text-secondary); line-height: 1.8; font-size: 15px; }
 
+.defSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .defSection {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+}
+.defText {
+  flex: 1;
+}
+.defImageWrapper {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  position: relative;
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .defImageWrapper {
+    width: 280px;
+    margin: 0;
+  }
+}
+.defImg {
+  object-fit: contain;
+  padding: 16px;
+}
+
 .infoList { display: flex; flex-direction: column; gap: 12px; }
 .infoItem {
   display: flex; flex-direction: column; gap: 2px;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { conditions, testimonials, doctor, siteConfig } from "@/lib/config";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -42,8 +43,19 @@ export default async function ConditionPage({ params }: { params: Promise<{ slug
 
       <section className="section">
         <div className={`container ${s.narrow}`}>
-          <h2 className={s.heading}>What is {condition.title} ({condition.altTitle})?</h2>
-          <p className={s.text}>{condition.definition}</p>
+          <div className={s.defSection}>
+            <div className={s.defText}>
+              <h2 className={s.heading}>What is {condition.title} ({condition.altTitle})?</h2>
+              <p className={s.text}>{condition.definition}</p>
+            </div>
+            {/* @ts-ignore */}
+            {condition.image && (
+              <div className={s.defImageWrapper}>
+                {/* @ts-ignore */}
+                <Image src={condition.image} alt={`${condition.title} Diagram`} fill className={s.defImg} sizes="(max-width: 768px) 100vw, 300px" />
+              </div>
+            )}
+          </div>
         </div>
       </section>
 

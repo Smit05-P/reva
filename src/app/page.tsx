@@ -7,6 +7,13 @@ import ConditionSvgBg from "@/components/ConditionSvgBg";
 import HomeIcons from "@/components/HomeIcons";
 import s from "./home.module.css";
 
+const facilityPreview = [
+  { src: "/reva p/reception area 1.JPG", label: "Reception" },
+  { src: "/reva p/opretion 1.JPG", label: "Operation Theatre" },
+  { src: "/reva p/special room 1.JPG", label: "Patient Rooms" },
+  { src: "/reva p/medical 1.JPG", label: "Medical Equipment" },
+];
+
 export default function HomePage() {
   return (
     <div style={{ position: 'relative' }}>
@@ -15,8 +22,8 @@ export default function HomePage() {
       <section className={s.hero}>
         <div className={s.heroBg}>
           <Image
-            src="/images/image.png"
-            alt="Hospital Interior"
+            src="/reva p/reception area 2.JPG"
+            alt="Reva Surgical Hospital — Modern Facility"
             fill
             className={s.heroBgImage}
             priority
@@ -86,6 +93,13 @@ export default function HomePage() {
                 <span className={s.serviceIcon}>
                   <HomeIcons name={c.icon} size={28} />
                 </span>
+                {/* @ts-ignore */}
+                {c.image && (
+                  <div className={s.serviceImageWrapper}>
+                    {/* @ts-ignore */}
+                    <Image src={c.image} alt={c.title} fill className={s.serviceImg} sizes="(max-width: 768px) 100vw, 33vw" />
+                  </div>
+                )}
                 <h3 className={s.serviceName}>{c.title} <span className={s.serviceAlt}>({c.altTitle})</span></h3>
                 <p className={s.serviceDesc}>{c.shortDesc}</p>
                 <span className={s.serviceLink}>Learn More →</span>
@@ -110,6 +124,37 @@ export default function HomePage() {
                 <p className={s.whyDesc}>{item.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities Preview */}
+      <section className={`section ${s.facilitiesSection}`}>
+        <div className="container">
+          <h2 className="section-title">World-Class Facilities</h2>
+          <p className="section-subtitle">Modern infrastructure designed for your comfort and safety</p>
+          <div className={s.facilitiesGrid}>
+            {facilityPreview.map((item) => (
+              <div key={item.label} className={s.facilityItem}>
+                <div className={s.facilityImgWrapper}>
+                  <Image
+                    src={item.src}
+                    alt={item.label}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className={s.facilityImg}
+                  />
+                  <div className={s.facilityOverlay}>
+                    <span className={s.facilityLabel}>{item.label}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={s.facilitiesCta}>
+            <Link href="/gallery" className="btn-outline">
+              View Full Gallery →
+            </Link>
           </div>
         </div>
       </section>

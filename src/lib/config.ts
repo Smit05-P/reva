@@ -38,6 +38,7 @@ export const conditions = [
   {
     slug: "piles",
     title: "Piles",
+    image: "/diagnosis/Piles-haemorrhoids.png",
     altTitle: "Hemorrhoids",
     shortDesc:
       "Swollen veins in the rectum or anus — treatable with minimally invasive surgery.",
@@ -101,6 +102,7 @@ export const conditions = [
   {
     slug: "fissure",
     title: "Fissure",
+    image: "/diagnosis/Fissure-Anale_-23.png",
     altTitle: "Anal Fissure",
     shortDesc:
       "Small tear in the anal lining causing pain and bleeding during bowel movements.",
@@ -165,6 +167,7 @@ export const conditions = [
   {
     slug: "fistula",
     title: "Fistula",
+    image: "/diagnosis/Fistula_diag_01.svg.png",
     altTitle: "Anorectal Fistula",
     shortDesc:
       "Abnormal tunnel between the rectum and skin — requires surgical correction.",
@@ -225,6 +228,7 @@ export const conditions = [
   {
     slug: "pilonidal-sinus",
     title: "Pilonidal Sinus",
+    image: "/diagnosis/Pilonidal_Sinus1707977935.png",
     altTitle: "Pilonidal Cyst",
     shortDesc:
       "Infected tract near the tailbone — treated with laser/minimally invasive surgery.",
@@ -352,40 +356,42 @@ export const navLinks = [
 
 export const galleryCategories = [
   {
+    title: "Consultation Room",
+    images: [
+      { src: "/reva p/main .jpeg", alt: "Main Consultation Room" },
+      { src: "/reva p/doctor room 1.JPG", alt: "Doctor's Consultation Room" },
+      { src: "/reva p/doctor room 2.JPG", alt: "Examination & Consultation Area" },
+    ],
+  },
+  {
     title: "Reception & Waiting Area",
     images: [
-      { src: "/images/gallery/reception-1.jpg", alt: "Reception area with modern seating" },
-      { src: "/images/gallery/reception-2.jpg", alt: "Spacious waiting area" },
-      { src: "/images/gallery/reception-3.jpg", alt: "Front desk reception" },
+      { src: "/reva p/reception area 1.JPG", alt: "Modern Reception Area" },
+      { src: "/reva p/reception area 2.JPG", alt: "Spacious Waiting Lounge" },
+      { src: "/reva p/reception ares 3.JPG", alt: "Front Desk & Entrance" },
     ],
   },
   {
     title: "Operation Theatre",
     images: [
-      { src: "/images/gallery/ot-1.jpg", alt: "Modern operation theatre with advanced equipment" },
-      { src: "/images/gallery/ot-2.jpg", alt: "Surgical equipment setup" },
-    ],
-  },
-  {
-    title: "OPD (Consultation Room)",
-    images: [
-      { src: "/images/gallery/opd-1.jpg", alt: "Doctor consultation room" },
-      { src: "/images/gallery/opd-2.jpg", alt: "OPD examination area" },
+      { src: "/reva p/opretion 1.JPG", alt: "Advanced Operation Theatre" },
+      { src: "/reva p/opreation 2.JPG", alt: "Surgical Equipment & Setup" },
     ],
   },
   {
     title: "Patient Rooms",
     images: [
-      { src: "/images/gallery/room-1.jpg", alt: "Comfortable patient room" },
-      { src: "/images/gallery/room-2.jpg", alt: "Deluxe patient room with amenities" },
-      { src: "/images/gallery/room-3.jpg", alt: "Patient room with attached washroom" },
+      { src: "/reva p/special room 1.JPG", alt: "Deluxe Private Suite" },
+      { src: "/reva p/special room 2.JPG", alt: "Premium Patient Room" },
+      { src: "/reva p/genral room 1.JPG", alt: "Comfortable General Ward" },
     ],
   },
   {
-    title: "Nursing Station",
+    title: "Nursing & Medical",
     images: [
-      { src: "/images/gallery/nursing-1.jpg", alt: "Nursing station and lobby" },
-      { src: "/images/gallery/nursing-2.jpg", alt: "24/7 nursing care station" },
+      { src: "/reva p/nurshing.JPG", alt: "24/7 Nursing Station" },
+      { src: "/reva p/medical 1.JPG", alt: "Medical Equipment Hub" },
+      { src: "/reva p/medical 2.JPG", alt: "Advanced Diagnostic Facility" },
     ],
   },
 ];

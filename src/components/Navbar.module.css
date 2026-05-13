@@ -73,6 +73,13 @@
 .dropdown {
   position: relative;
 }
+.dropdownIcon {
+  transition: transform 0.2s;
+}
+.dropdown:hover .dropdownIcon {
+  transform: rotate(180deg);
+}
+
 .dropdownMenu {
   position: absolute;
   top: calc(100% + 8px);
@@ -84,7 +91,24 @@
   padding: 8px;
   min-width: 200px;
   z-index: 100;
-  animation: dropIn 0.15s ease;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.dropdown:hover .dropdownMenu {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  animation: dropIn 0.2s ease;
+}
+.dropdownMenu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
 }
 @keyframes dropIn {
   from { opacity: 0; transform: translateX(-50%) translateY(-4px); }

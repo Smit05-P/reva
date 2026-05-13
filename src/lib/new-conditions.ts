@@ -2,6 +2,7 @@ export const newConditions = [
   {
     slug: "rectal-prolapse",
     title: "Rectal Prolapse",
+    image: "/diagnosis/ectal_prolapse_bigbead.png",
     altTitle: "Prolapsed Rectum",
     shortDesc: "When the rectum slides out of place — expert surgical correction available.",
     icon: "ArrowDownCircle",
@@ -56,6 +57,7 @@ export const newConditions = [
   {
     slug: "anal-papilla",
     title: "Anal Papilla",
+    image: "/diagnosis/anal papila.png",
     altTitle: "Hypertrophied Anal Papilla",
     shortDesc: "Enlarged papillae in the anal canal causing discomfort — treatable with minor surgery.",
     icon: "CircleDot",
@@ -108,6 +110,7 @@ export const newConditions = [
   {
     slug: "perianal-abscess",
     title: "Perianal Abscess",
+    image: "/diagnosis/perianal abscesse.png",
     altTitle: "Anorectal Abscess",
     shortDesc: "Painful collection of pus near the anus — requires drainage and expert treatment.",
     icon: "ShieldAlert",
@@ -160,6 +163,7 @@ export const newConditions = [
   {
     slug: "ods",
     title: "ODS",
+    image: "/diagnosis/ODS Image.png",
     altTitle: "Obstructed Defecation Syndrome",
     shortDesc: "Difficulty emptying the bowel despite the urge — specialist evaluation and treatment.",
     icon: "AlertCircle",
@@ -214,6 +218,7 @@ export const newConditions = [
   {
     slug: "constipation",
     title: "Constipation",
+    image: "/diagnosis/constipation.png",
     altTitle: "Chronic Constipation",
     shortDesc: "Persistent difficulty passing stools — comprehensive evaluation and management.",
     icon: "Clock",
