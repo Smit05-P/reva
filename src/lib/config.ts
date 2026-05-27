@@ -299,10 +299,10 @@ export const testimonials = [
 ];
 
 export const stats = [
-  { label: "Years of Experience", value: 10, suffix: "+" },
-  { label: "Happy Patients", value: 5000, suffix: "+" },
-  { label: "Surgeries Performed", value: 3000, suffix: "+" },
-  { label: "Conditions Treated", value: 9, suffix: "" },
+  { label: "Years of Experience", value: 3, suffix: "+" },
+  { label: "Happy Patients", value: 3000, suffix: "+" },
+  { label: "Surgeries Performed", value: 1000, suffix: "+" },
+  { label: "Conditions Treated", value: 13, suffix: "" },
 ];
 
 export const whyChooseUs = [
