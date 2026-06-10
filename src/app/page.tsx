@@ -54,6 +54,24 @@ export default function HomePage() {
               <Link href="/about" className="btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>Meet the Doctor</Link>
             </div>
           </div>
+
+          <div className={s.heroProfileSection}>
+            <div className={s.heroCard}>
+              <div className={s.heroCardPhoto}>
+                <Image
+                  src="/images/dr-parth-profile.png"
+                  alt={doctor.name}
+                  width={200}
+                  height={200}
+                  className={s.heroProfileImg}
+                  priority
+                />
+              </div>
+              <h3 className={s.heroCardName}>{doctor.name}</h3>
+              <p className={s.heroCardDesg}>{doctor.designation}</p>
+              <p className={s.heroCardQual}>{doctor.qualifications}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -62,7 +80,7 @@ export default function HomePage() {
         <div className={`container ${s.aboutInner}`}>
           <div className={s.aboutPhoto}>
             <Image
-              src="/images/profile.jpeg"
+              src="/images/dr-parth-profile.png"
               alt={doctor.name}
               width={400}
               height={500}

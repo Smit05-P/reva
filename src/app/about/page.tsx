@@ -27,7 +27,7 @@ export default function AboutPage() {
           <div className={s.photoCol}>
             <div className={s.photo}>
               <Image
-                src="/images/profile.jpeg"
+                src="/images/dr-parth-profile.png"
                 alt={doctor.name}
                 width={360}
                 height={450}
